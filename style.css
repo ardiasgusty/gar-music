@@ -1,0 +1,1043 @@
+/* ===================================================
+   G.A.R - THANKS ME LATER VIBRANT CRAYON DOODLE THEME
+   Aesthetic: Playful, Cheerful, Neo-brutalism Doodle / Indie Pop Crayon Art
+   =================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Gloria+Hallelujah&family=Outfit:wght@600;800;900&family=Plus+Jakarta+Sans:wght@500;600;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  /* Crayon & Album Palette */
+  --crayon-pink: #ff2a85;
+  --crayon-yellow: #ffdf00;
+  --crayon-cyan: #00d2ff;
+  --crayon-lime: #70e000;
+  --crayon-orange: #ff7700;
+  --crayon-purple: #9d4edd;
+  
+  --bg-primary: #fffdf8;
+  --bg-canvas: #faf6ed;
+  --text-dark: #1e1b24;
+  --text-crayon: #18151f;
+  
+  --card-bg: #ffffff;
+  --border-thick: 3.5px solid #1a1622;
+  --border-color: #1a1622;
+  
+  /* Crayon Shadows (Neo-brutalist / Hand-drawn pop) */
+  --shadow-doodle: 6px 6px 0px #1a1622;
+  --shadow-doodle-hover: 9px 9px 0px #1a1622;
+  --shadow-doodle-pink: 6px 6px 0px #ff2a85;
+  --shadow-doodle-yellow: 6px 6px 0px #ffc400;
+  --shadow-doodle-cyan: 6px 6px 0px #00b4d8;
+  
+  --border-radius-doodle: 24px 18px 26px 16px;
+  --border-radius-pill: 9999px;
+  
+  --font-doodle: 'Gloria Hallelujah', cursive;
+  --font-heading: 'Fredoka', cursive, sans-serif;
+  --font-body: 'Plus Jakarta Sans', sans-serif;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--bg-canvas);
+  color: var(--text-dark);
+  min-height: 100vh;
+  position: relative;
+  overflow-x: hidden;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Notebook paper grid / sketchbook texture background */
+.doodle-sketch-grid {
+  position: fixed;
+  inset: 0;
+  background-image: 
+    linear-gradient(rgba(26, 22, 34, 0.04) 1.5px, transparent 1.5px),
+    linear-gradient(90deg, rgba(26, 22, 34, 0.04) 1.5px, transparent 1.5px);
+  background-size: 32px 32px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Floating Crayon Doodles (Sun, Rainbow, Stars, Cherry, Scribble) */
+.ambient-doodles {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.floating-doodle {
+  position: absolute;
+  font-size: 2.2rem;
+  opacity: 0.88;
+  filter: drop-shadow(2px 2px 0px rgba(0, 0, 0, 0.2));
+  animation: floatWiggle 6s ease-in-out infinite alternate;
+}
+
+.doodle-sun {
+  top: 30px;
+  right: 5%;
+  font-size: 3.5rem;
+  animation-duration: 5s;
+}
+
+.doodle-rainbow {
+  top: 18%;
+  left: 3%;
+  font-size: 3.2rem;
+  transform: rotate(-12deg);
+  animation-duration: 7s;
+}
+
+.doodle-cherry {
+  bottom: 12%;
+  left: 4%;
+  font-size: 3rem;
+  animation-duration: 6.5s;
+}
+
+.doodle-flower {
+  top: 50%;
+  right: 3%;
+  font-size: 2.8rem;
+  animation-duration: 5.5s;
+}
+
+.doodle-star1 {
+  top: 38%;
+  left: 7%;
+  font-size: 2rem;
+  color: var(--crayon-yellow);
+}
+
+.doodle-star2 {
+  bottom: 25%;
+  right: 6%;
+  font-size: 2.2rem;
+  color: var(--crayon-pink);
+}
+
+.doodle-sparkle {
+  top: 10%;
+  left: 20%;
+  font-size: 2rem;
+}
+
+/* Page Layout */
+.page-wrapper {
+  position: relative;
+  z-index: 2;
+  max-width: 920px;
+  margin: 0 auto;
+  padding: 30px 20px 80px;
+  display: flex;
+  flex-direction: column;
+  gap: 34px;
+}
+
+/* Header Navigation (Crayon sticker pill) */
+.header-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 22px;
+  background: #ffffff;
+  border: var(--border-thick);
+  border-radius: 9999px;
+  box-shadow: 4px 4px 0px #1a1622;
+  transform: rotate(-0.5deg);
+  transition: transform 0.2s ease;
+}
+
+.header-nav:hover {
+  transform: rotate(0deg);
+}
+
+.artist-brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.artist-badge {
+  font-family: var(--font-doodle);
+  font-weight: 700;
+  font-size: 1.5rem;
+  color: #1a1622;
+  background: var(--crayon-yellow);
+  padding: 2px 14px;
+  border-radius: 12px 16px 14px 18px;
+  border: 2.5px solid #1a1622;
+  transform: rotate(-3deg);
+  box-shadow: 2px 2px 0px #1a1622;
+  letter-spacing: 1px;
+}
+
+.verified-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  background: #e8faff;
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: #007799;
+  padding: 4px 12px;
+  border-radius: var(--border-radius-pill);
+  border: 2px solid #00b4d8;
+}
+
+.header-links {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.icon-btn {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #fff;
+  color: var(--text-dark);
+  text-decoration: none;
+  border: 2.5px solid #1a1622;
+  box-shadow: 2.5px 2.5px 0px #1a1622;
+  font-size: 1.15rem;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.icon-btn:hover {
+  transform: translate(-2px, -2px) rotate(4deg);
+  box-shadow: 4px 4px 0px #1a1622;
+  background: var(--crayon-yellow);
+}
+
+/* Hero Section (Crayon Scrapbook Polaroid Card) */
+.hero-card {
+  background: #ffffff;
+  border: var(--border-thick);
+  border-radius: 28px 20px 30px 18px;
+  padding: 38px 36px;
+  box-shadow: var(--shadow-doodle);
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  gap: 40px;
+  align-items: center;
+  position: relative;
+  overflow: visible;
+  transform: rotate(0.4deg);
+}
+
+/* Washi tape stickers on cards */
+.washi-tape {
+  position: absolute;
+  top: -14px;
+  left: 45px;
+  background: rgba(255, 42, 133, 0.85);
+  color: #fff;
+  font-family: var(--font-doodle);
+  font-size: 0.85rem;
+  padding: 4px 20px;
+  border-radius: 2px;
+  border: 2px dashed #ffffff;
+  transform: rotate(-2.5deg);
+  box-shadow: 2px 2px 5px rgba(0,0,0,0.15);
+  z-index: 4;
+}
+
+.washi-tape-right {
+  left: auto;
+  right: 40px;
+  top: -14px;
+  background: rgba(255, 196, 0, 0.9);
+  color: #1a1622;
+  transform: rotate(3deg);
+}
+
+.cover-wrapper {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1/1;
+  background: #ffffff;
+  border: var(--border-thick);
+  border-radius: 20px;
+  box-shadow: 6px 6px 0px var(--crayon-pink);
+  transform: rotate(-2deg);
+  transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.cover-wrapper:hover {
+  transform: rotate(0deg) scale(1.02);
+}
+
+.cover-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 16px;
+  display: block;
+}
+
+.badge-tag {
+  position: absolute;
+  top: -12px;
+  right: -10px;
+  background: var(--crayon-yellow);
+  color: #1a1622;
+  font-family: var(--font-doodle);
+  font-weight: 700;
+  font-size: 0.95rem;
+  padding: 4px 14px;
+  border-radius: 12px;
+  border: 2.5px solid #1a1622;
+  box-shadow: 3px 3px 0px #1a1622;
+  transform: rotate(6deg);
+  z-index: 3;
+}
+
+/* Hero Content */
+.hero-details {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.ep-meta {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  font-family: var(--font-doodle);
+  font-size: 1rem;
+  color: #ff2a85;
+  font-weight: 700;
+}
+
+.dot-separator {
+  color: #ff7700;
+}
+
+.song-title {
+  font-family: var(--font-heading);
+  font-size: 3.2rem;
+  font-weight: 900;
+  line-height: 1.05;
+  color: #1a1622;
+  text-shadow: 2px 2px 0px var(--crayon-yellow);
+  position: relative;
+  display: inline-block;
+}
+
+.crayon-underline {
+  position: relative;
+  display: inline-block;
+}
+
+.crayon-underline::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 2px;
+  width: 100%;
+  height: 14px;
+  background: rgba(255, 42, 133, 0.3);
+  border-radius: 6px;
+  z-index: -1;
+  transform: rotate(-1deg);
+}
+
+.artist-subtitle {
+  font-size: 1.2rem;
+  color: #555062;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.artist-subtitle strong {
+  color: #1a1622;
+  font-family: var(--font-doodle);
+  font-size: 1.4rem;
+  background: #ffea79;
+  padding: 0 8px;
+  border-radius: 6px;
+  border: 1.5px solid #1a1622;
+}
+
+.song-description {
+  color: #403b4d;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+/* Playful Crayon CTA Buttons */
+.cta-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-top: 10px;
+}
+
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: #1ed760;
+  color: #072911;
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 1.05rem;
+  padding: 12px 24px;
+  border-radius: 18px 14px 18px 14px;
+  border: 3px solid #1a1622;
+  text-decoration: none;
+  box-shadow: 4px 4px 0px #1a1622;
+  transition: all 0.15s ease;
+}
+
+.btn-primary:hover {
+  transform: translate(-3px, -3px);
+  box-shadow: 7px 7px 0px #1a1622;
+  background: #24ef6d;
+}
+
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: #ffffff;
+  color: #1a1622;
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 1.05rem;
+  padding: 12px 24px;
+  border-radius: 14px 18px 14px 18px;
+  border: 3px solid #1a1622;
+  text-decoration: none;
+  box-shadow: 4px 4px 0px #1a1622;
+  transition: all 0.15s ease;
+}
+
+.btn-secondary:hover {
+  transform: translate(-3px, -3px);
+  box-shadow: 7px 7px 0px #1a1622;
+  background: #fff4e0;
+}
+
+/* Embedded Player Section */
+.player-section {
+  background: #ffffff;
+  border: var(--border-thick);
+  border-radius: 26px 18px 24px 20px;
+  padding: 32px 34px;
+  box-shadow: var(--shadow-doodle);
+  position: relative;
+  transform: rotate(-0.3deg);
+}
+
+.section-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.section-title {
+  font-family: var(--font-heading);
+  font-size: 1.7rem;
+  font-weight: 800;
+  color: #1a1622;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.pulse-indicator {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: var(--crayon-pink);
+  border: 2.5px solid #1a1622;
+  display: inline-block;
+  animation: pulseCrayon 1.5s infinite;
+}
+
+.player-container {
+  border-radius: 18px;
+  overflow: hidden;
+  border: 3px solid #1a1622;
+  box-shadow: 4px 4px 0px #1a1622;
+  background: #000;
+}
+
+.player-container iframe {
+  display: block;
+}
+
+/* Track list selector buttons */
+.track-selector-title {
+  font-family: var(--font-doodle);
+  font-size: 1.15rem;
+  color: #ff2a85;
+  margin: 24px 0 12px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.track-tabs {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 10px;
+}
+
+.track-tab-btn {
+  background: #faf7f2;
+  border: 2.5px solid #1a1622;
+  color: #332d3d;
+  border-radius: 14px 10px 16px 12px;
+  padding: 12px 14px;
+  font-family: var(--font-heading);
+  font-size: 0.95rem;
+  font-weight: 700;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  box-shadow: 3px 3px 0px #1a1622;
+  transition: all 0.15s ease;
+  text-align: left;
+}
+
+.track-tab-btn:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 5px 5px 0px #1a1622;
+  background: #fff;
+}
+
+.track-tab-btn.active {
+  background: var(--crayon-yellow);
+  color: #1a1622;
+  box-shadow: 5px 5px 0px #1a1622;
+  transform: translate(-2px, -2px);
+  border-color: #1a1622;
+}
+
+.track-tab-btn .track-num {
+  font-family: var(--font-doodle);
+  font-size: 0.9rem;
+  color: #ff2a85;
+}
+
+.track-tab-btn.active .track-num {
+  color: #1a1622;
+}
+
+/* Platforms Section */
+.platforms-section {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.platform-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 16px;
+}
+
+.platform-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 20px;
+  background: #ffffff;
+  border: var(--border-thick);
+  border-radius: 18px 14px 20px 16px;
+  text-decoration: none;
+  color: #1a1622;
+  box-shadow: 5px 5px 0px #1a1622;
+  transition: all 0.15s ease;
+  position: relative;
+}
+
+.platform-card:hover {
+  transform: translate(-3px, -3px) rotate(-0.5deg);
+  box-shadow: 8px 8px 0px #1a1622;
+}
+
+.platform-left {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.platform-icon {
+  width: 46px;
+  height: 46px;
+  border-radius: 14px;
+  border: 2px solid #1a1622;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.4rem;
+  box-shadow: 2px 2px 0px #1a1622;
+}
+
+.icon-spotify {
+  background: #1ed760;
+  color: #05240e;
+}
+
+.icon-youtube {
+  background: #ff0000;
+  color: #fff;
+}
+
+.icon-apple {
+  background: #fc3c44;
+  color: #fff;
+}
+
+.icon-amazon {
+  background: #ff9900;
+  color: #1a1622;
+}
+
+.icon-deezer {
+  background: #a238ff;
+  color: #fff;
+}
+
+.icon-tiktok {
+  background: #000;
+  color: #fff;
+}
+
+.platform-meta {
+  display: flex;
+  flex-direction: column;
+}
+
+.platform-name {
+  font-family: var(--font-heading);
+  font-weight: 800;
+  font-size: 1.1rem;
+}
+
+.platform-action {
+  font-size: 0.8rem;
+  color: #6d677a;
+  font-weight: 600;
+}
+
+.platform-arrow {
+  color: #1a1622;
+  font-size: 1.25rem;
+  font-weight: 800;
+  transition: transform 0.2s ease;
+}
+
+.platform-card:hover .platform-arrow {
+  transform: translate(3px, -3px);
+}
+
+/* Connect / Social Media Card */
+.connect-card {
+  background: #ffffff;
+  border: var(--border-thick);
+  border-radius: 26px 18px 24px 20px;
+  padding: 36px;
+  box-shadow: var(--shadow-doodle);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  position: relative;
+  transform: rotate(0.3deg);
+}
+
+.connect-header {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.avatar-ring {
+  position: relative;
+  width: 76px;
+  height: 76px;
+  flex-shrink: 0;
+}
+
+.avatar-img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #1a1622;
+  box-shadow: 3px 3px 0px var(--crayon-pink);
+}
+
+.avatar-badge {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  background: var(--crayon-yellow);
+  color: #1a1622;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.8rem;
+  font-weight: 900;
+  border: 2px solid #1a1622;
+}
+
+.connect-title-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.connect-subtitle {
+  font-family: var(--font-doodle);
+  color: #ff2a85;
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
+.connect-bio {
+  color: #433e50;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.social-channels-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px;
+  margin-top: 6px;
+}
+
+.social-pill-card {
+  display: flex;
+  align-items: center;
+  padding: 14px 18px;
+  border-radius: 18px 12px 16px 14px;
+  background: #faf7f2;
+  border: 2.5px solid #1a1622;
+  text-decoration: none;
+  color: #1a1622;
+  box-shadow: 4px 4px 0px #1a1622;
+  transition: all 0.15s ease;
+  gap: 14px;
+}
+
+.social-pill-card:hover {
+  transform: translate(-3px, -3px) rotate(1deg);
+  box-shadow: 7px 7px 0px #1a1622;
+  background: #ffffff;
+}
+
+.social-icon-box {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  border: 2px solid #1a1622;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.4rem;
+  box-shadow: 2px 2px 0px #1a1622;
+}
+
+.social-info {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.social-platform-label {
+  font-size: 0.78rem;
+  color: #716b7e;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.social-handle {
+  font-family: var(--font-heading);
+  font-weight: 800;
+  font-size: 1.05rem;
+}
+
+.social-follow-tag {
+  font-family: var(--font-doodle);
+  font-size: 0.85rem;
+  font-weight: 700;
+  padding: 4px 12px;
+  border-radius: var(--border-radius-pill);
+  background: #fff;
+  border: 2px solid #1a1622;
+  box-shadow: 2px 2px 0px #1a1622;
+}
+
+.social-pill-card.instagram .social-icon-box {
+  background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+  color: #fff;
+}
+.social-pill-card.instagram:hover .social-follow-tag {
+  background: #ff2a85;
+  color: #fff;
+}
+
+.social-pill-card.tiktok .social-icon-box {
+  background: #000;
+  color: #fff;
+}
+.social-pill-card.tiktok:hover .social-follow-tag {
+  background: #00f2fe;
+  color: #000;
+}
+
+.social-pill-card.youtube .social-icon-box {
+  background: #ff0000;
+  color: #fff;
+}
+.social-pill-card.youtube:hover .social-follow-tag {
+  background: #ff0000;
+  color: #fff;
+}
+
+/* About / Story Section (Doodle Note Pad) */
+.story-card {
+  background: #ffffff;
+  border: var(--border-thick);
+  border-radius: 24px 20px 26px 18px;
+  padding: 36px;
+  box-shadow: var(--shadow-doodle);
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  transform: rotate(-0.4deg);
+}
+
+.quote-highlight {
+  font-family: var(--font-doodle);
+  font-size: 1.45rem;
+  color: #ff2a85;
+  line-height: 1.5;
+  background: #fff6da;
+  padding: 16px 20px;
+  border-radius: 16px;
+  border: 2px dashed #ff9900;
+  transform: rotate(-0.5deg);
+}
+
+.story-text {
+  color: #3e384b;
+  font-size: 1.02rem;
+  line-height: 1.7;
+}
+
+/* Share & Social Bar */
+.share-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
+  padding: 18px 26px;
+  background: #ffffff;
+  border: var(--border-thick);
+  border-radius: 20px;
+  box-shadow: 4px 4px 0px #1a1622;
+}
+
+.share-label {
+  font-family: var(--font-doodle);
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #1a1622;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.share-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.share-pill-btn {
+  background: #faf7f2;
+  border: 2px solid #1a1622;
+  color: #1a1622;
+  padding: 8px 16px;
+  border-radius: 12px;
+  font-family: var(--font-heading);
+  font-size: 0.9rem;
+  font-weight: 700;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  box-shadow: 2.5px 2.5px 0px #1a1622;
+  transition: all 0.15s ease;
+}
+
+.share-pill-btn:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 4px 4px 0px #1a1622;
+  background: var(--crayon-yellow);
+}
+
+/* Interactive Toast */
+.toast-notice {
+  position: fixed;
+  bottom: 24px;
+  left: 50%;
+  transform: translateX(-50%) translateY(100px);
+  background: #ffffff;
+  border: 3px solid #1a1622;
+  color: #1a1622;
+  padding: 12px 26px;
+  border-radius: 9999px;
+  font-family: var(--font-heading);
+  font-size: 1rem;
+  font-weight: 800;
+  box-shadow: 5px 5px 0px #1a1622;
+  z-index: 100;
+  opacity: 0;
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  pointer-events: none;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.toast-notice.show {
+  transform: translateX(-50%) translateY(0);
+  opacity: 1;
+}
+
+/* Footer */
+.footer-area {
+  text-align: center;
+  color: #696277;
+  font-size: 0.9rem;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding-top: 10px;
+}
+
+.footer-area strong {
+  color: #1a1622;
+  font-family: var(--font-doodle);
+}
+
+.footer-area a {
+  color: #ff2a85;
+  text-decoration: none;
+  font-weight: 700;
+  transition: color 0.15s;
+}
+
+.footer-area a:hover {
+  color: #ff7700;
+  text-decoration: underline;
+}
+
+/* Keyframes */
+@keyframes floatWiggle {
+  0% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-12px) rotate(4deg);
+  }
+  100% {
+    transform: translateY(-4px) rotate(-3deg);
+  }
+}
+
+@keyframes pulseCrayon {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.3);
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .hero-card {
+    grid-template-columns: 1fr;
+    text-align: center;
+    padding: 30px 20px;
+    gap: 26px;
+  }
+
+  .cover-wrapper {
+    max-width: 260px;
+    margin: 0 auto;
+  }
+
+  .song-title {
+    font-size: 2.4rem;
+  }
+
+  .artist-subtitle {
+    justify-content: center;
+  }
+
+  .ep-meta {
+    justify-content: center;
+  }
+
+  .cta-buttons {
+    justify-content: center;
+  }
+
+  .player-section {
+    padding: 22px 18px;
+  }
+
+  .track-tabs {
+    grid-template-columns: 1fr;
+  }
+
+  .platform-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .share-bar {
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+  }
+  
+  .floating-doodle {
+    opacity: 0.5;
+  }
+}
